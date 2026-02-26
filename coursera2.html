@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration Hub | Beyond the Stars</title>
+    <meta name="description" content="Discover the wonders of space exploration, celestial bodies, and the future of interstellar travel.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #05070a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(5, 7, 10, 0.7), rgba(5, 7, 10, 0.7)), url('nebula_background_1772118755346.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--accent-primary), transparent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        li {
+            padding: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        li::before {
+            content: '✦';
+            color: var(--accent-primary);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--glass-bg);
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: box-shadow 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            section { margin-bottom: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header>
+        <h1>Beyond the Stars</h1>
+        <p class="hero-subtitle">Exploring the final frontier through the lens of modern science and human curiosity.</p>
+    </header>
+
+    <main id="main-content">
+        <section id="celestial-bodies">
+            <h2>Cosmic Wonders</h2>
+            <div class="grid">
+                <article class="card">
+                    <img src="mars_surface_1772118776747.png" alt="High-resolution panoramic view of the rocky and dusty rust-colored surface of Mars under a faint blue sky.">
+                    <h3>The Red Planet</h3>
+                    <p>Mars continues to be the primary focus of planetary exploration, with rovers searching for ancient signs of life.</p>
+                </article>
+
+                <article class="card">
+                    <img src="saturn_rings_1772118800188.png" alt="Majestic wide-angle shot of Saturn with its iconic glowing ice rings and the sun peaking from the horizon.">
+                    <h3>Lord of the Rings</h3>
+                    <p>Saturn is famous for its extensive ring system, composed mostly of ice particles with a smaller amount of rocky debris and dust.</p>
+                </article>
+
+                <article class="card">
+                    <img src="nebula_background_1772118755346.png" alt="Vibrant cosmic nebula with swirling clouds of purple and cyan gas, illuminated by newborn stars.">
+                    <h3>Stellar Nurseries</h3>
+                    <p>Nebulae are massive clouds of dust and gas in outer space where new stars are born from gravity and heat.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="milestones">
+            <h2>Exploration Milestones</h2>
+            <p>Humanity's journey into the cosmos is marked by incredible achievements that have redefined our place in the universe.</p>
+            <ul>
+                <li>SpaceX's Starship: The first fully reusable transport system designed to carry humans to Mars.</li>
+                <li>James Webb Telescope: Unlocking the secrets of the earliest galaxies formed after the Big Bang.</li>
+                <li>Artemis Program: Returning humans to the lunar surface to establish a sustainable presence.</li>
+            </ul>
+        </section>
+
+        <section class="cta-section" id="call-to-action">
+            <h2>Join the Mission</h2>
+            <p>Stay updated with the latest discoveries and missions from the forefront of space exploration.</p>
+            <a href="https://www.nasa.gov" class="btn" target="_blank" rel="noopener noreferrer">Visit NASA Official</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Space Exploration Hub. Built for Coursera Final Project.</p>
+    </footer>
+</body>
+</html>
